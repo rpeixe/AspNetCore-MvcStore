@@ -10,6 +10,6 @@ The system is an online store for the game *The Throne's Tournament*. The user s
 
 ![Entity-Relationship Conceptual Model Diagram](ERModel.png)
 
-## Models Class Diagram
+## Model Class Diagram
 
 ![Models Class Diagram](ClassDiagram.png)
