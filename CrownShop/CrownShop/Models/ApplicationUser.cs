@@ -9,4 +9,6 @@ public class ApplicationUser : IdentityUser<int>
     public string? LastName { get; set; }
     [DataType(DataType.Date)]
     public DateTime Birthday { get; set; }
+
+    public CrownWallet? CrownWallet { get; set; }
 }
