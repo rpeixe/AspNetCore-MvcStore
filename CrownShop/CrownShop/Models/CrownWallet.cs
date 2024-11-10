@@ -10,6 +10,7 @@ public class CrownWallet
     public required ApplicationUser User { get; set; }
 
     public int CrownBalance { get; set; }
+    public required ICollection<Purchase> Purchases { get; set; }
 
     [Timestamp]
     public required byte[] Version { get; set; }
