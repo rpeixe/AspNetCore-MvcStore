@@ -7,10 +7,10 @@ public class CrownWallet
 {
     [Key, ForeignKey("ApplicationUser")]
     public int Id { get; set; }
-    public required ApplicationUser User { get; set; }
+    public virtual required ApplicationUser User { get; set; }
 
     public int CrownBalance { get; set; }
-    public ICollection<Purchase> Purchases { get; set; } = [];
+    public virtual ICollection<Purchase> Purchases { get; set; } = [];
 
     [Timestamp]
     public byte[]? Version { get; set; }
