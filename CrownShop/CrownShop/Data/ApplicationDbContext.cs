@@ -18,7 +18,7 @@ public class ApplicationDbContext(DbContextOptions<ApplicationDbContext> options
     public DbSet<Purchase> Purchases { get; set; }
     public DbSet<RelatedItem> RelatedItems { get; set; }
     public DbSet<Sale> Sales { get; set; }
-    public DbSet<StoreEntry> StoreEntrys { get; set; }
+    public DbSet<StoreEntry> StoreEntries { get; set; }
 
     protected override void OnModelCreating(ModelBuilder builder)
     {
