@@ -24,17 +24,6 @@ public class ApplicationDbContext(DbContextOptions<ApplicationDbContext> options
     {
         base.OnModelCreating(builder);
 
-        builder.Entity<Item>()
-            .HasDiscriminator<string>("ItemType")
-            .HasValue<AccountItem>("AccountItem")
-            .HasValue<InGameItem>("InGameItem");
-        
-        builder.Entity<Purchase>()
-            .HasDiscriminator<string>("PurchaseType")
-            .HasValue<CrownPurchase>("CrownPurchase")
-            .HasValue<ItemPurchase>("ItemPurchase")
-            .HasValue<Subscription>("Subscription");
-
         builder.Entity<CrownInventory>()
             .HasOne(c => c.User)
             .WithOne(u => u.CrownInventory)
@@ -46,5 +35,20 @@ public class ApplicationDbContext(DbContextOptions<ApplicationDbContext> options
             .WithOne(u => u.CrownWallet)
             .HasForeignKey<CrownWallet>(c => c.Id)
             .IsRequired();
+        
+        builder.Entity<CrownPurchase>()
+            .Property(c => c.Cost)
+            .HasPrecision(18, 2);
+
+        builder.Entity<Item>()
+            .HasDiscriminator<string>("ItemType")
+            .HasValue<AccountItem>("AccountItem")
+            .HasValue<InGameItem>("InGameItem");
+        
+        builder.Entity<Purchase>()
+            .HasDiscriminator<string>("PurchaseType")
+            .HasValue<CrownPurchase>("CrownPurchase")
+            .HasValue<ItemPurchase>("ItemPurchase")
+            .HasValue<Subscription>("Subscription");
     }
 }
