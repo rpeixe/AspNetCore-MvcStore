@@ -34,5 +34,17 @@ public class ApplicationDbContext(DbContextOptions<ApplicationDbContext> options
             .HasValue<CrownPurchase>("CrownPurchase")
             .HasValue<ItemPurchase>("ItemPurchase")
             .HasValue<Subscription>("Subscription");
+
+        builder.Entity<CrownInventory>()
+            .HasOne(c => c.User)
+            .WithOne(u => u.CrownInventory)
+            .HasForeignKey<CrownInventory>(c => c.Id)
+            .IsRequired();
+
+        builder.Entity<CrownWallet>()
+            .HasOne(c => c.User)
+            .WithOne(u => u.CrownWallet)
+            .HasForeignKey<CrownWallet>(c => c.Id)
+            .IsRequired();
     }
 }
