@@ -1,5 +1,5 @@
 using CrownShop.Data;
-using CrownShop.Models;
+using CrownShop.Models.Entities;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 

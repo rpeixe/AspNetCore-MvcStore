@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Identity;
 using System.ComponentModel.DataAnnotations;
 
-namespace CrownShop.Models;
+namespace CrownShop.Models.Entities;
 
 public class ApplicationUser : IdentityUser<int>
 {

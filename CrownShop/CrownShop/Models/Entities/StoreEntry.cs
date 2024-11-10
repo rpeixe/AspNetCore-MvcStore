@@ -1,7 +1,7 @@
 using System.ComponentModel.DataAnnotations.Schema;
 using CrownShop.Enums;
 
-namespace CrownShop.Models;
+namespace CrownShop.Models.Entities;
 
 public class StoreEntry
 {
@@ -19,7 +19,7 @@ public class StoreEntry
     [NotMapped]
     public IEnumerable<RelatedItem> Prerequisites =>
         RelatedItems.Where(r => r.Type == RelatedItemType.Prerequisite);
-    
+
     [NotMapped]
     public IEnumerable<RelatedItem> IncludedItems =>
         RelatedItems.Where(r => r.Type == RelatedItemType.Included);

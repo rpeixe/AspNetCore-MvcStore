@@ -1,6 +1,6 @@
 using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
-using CrownShop.Models;
+using CrownShop.Models.ViewModels;
 
 namespace CrownShop.Controllers;
 

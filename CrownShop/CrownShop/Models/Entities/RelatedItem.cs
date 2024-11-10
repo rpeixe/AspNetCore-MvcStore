@@ -1,6 +1,6 @@
 using CrownShop.Enums;
 
-namespace CrownShop.Models;
+namespace CrownShop.Models.Entities;
 
 public class RelatedItem
 {

@@ -1,7 +1,7 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace CrownShop.Models;
+namespace CrownShop.Models.Entities;
 
 public class CrownWallet
 {

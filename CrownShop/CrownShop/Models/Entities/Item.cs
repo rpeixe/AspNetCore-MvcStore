@@ -1,7 +1,7 @@
 using System.ComponentModel.DataAnnotations.Schema;
 using CrownShop.Enums;
 
-namespace CrownShop.Models;
+namespace CrownShop.Models.Entities;
 
 public abstract class Item
 {
@@ -16,7 +16,7 @@ public abstract class Item
     [NotMapped]
     public virtual IEnumerable<RelatedItem> RequiredFor =>
         RelatedStoreEntries.Where(r => r.Type == RelatedItemType.Prerequisite);
-        
+
     [NotMapped]
     public virtual IEnumerable<RelatedItem> IncludedInStoreEntries =>
         RelatedStoreEntries.Where(r => r.Type == RelatedItemType.Included);

@@ -1,4 +1,4 @@
-namespace CrownShop.Models;
+namespace CrownShop.Models.Entities;
 
 public class Subscription : Purchase
 {
