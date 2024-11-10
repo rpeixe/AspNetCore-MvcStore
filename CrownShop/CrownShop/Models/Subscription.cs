@@ -1,6 +1,6 @@
 namespace CrownShop.Models;
 
-public abstract class Subscription : Purchase
+public class Subscription : Purchase
 {
     public int MembershipId { get; set; }
     public virtual required Membership Membership { get; set; }
