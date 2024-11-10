@@ -13,8 +13,9 @@ var connectionString = builder.Configuration.GetConnectionString("SqlServer") ??
 builder.Services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(connectionString));
     
 //Configuration Identity Services
-builder.Services.AddIdentity<ApplicationUser, IdentityRole>()
+builder.Services.AddIdentity<ApplicationUser, IdentityRole<int>>()
         .AddEntityFrameworkStores<ApplicationDbContext>();
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -30,6 +31,7 @@ app.UseStaticFiles();
 
 app.UseRouting();
 
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllerRoute(
