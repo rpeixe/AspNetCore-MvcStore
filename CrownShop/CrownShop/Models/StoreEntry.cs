@@ -9,4 +9,5 @@ public class StoreEntry
     public int PriceInCrowns { get; set; }
     public ItemCategory Category { get; set; }
     public int MaxQuantity { get; set; }
+    public required ICollection<ItemPurchase> Purchases { get; set; }
 }
