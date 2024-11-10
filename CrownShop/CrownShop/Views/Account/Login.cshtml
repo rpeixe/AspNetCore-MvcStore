@@ -1,0 +1,33 @@
+@model LoginViewModel
+
+@{
+    ViewData["Title"] = "User Login";
+}
+
+<h1>@ViewData["Title"]</h1>
+<div class="row mt-3">
+    <div class="col-md-12">
+        <form method="post">
+            <div class="text-danger" asp-validation-summary="ModelOnly"></div>
+            <div class="form-group mb-3">
+                <label asp-for="Email"></label>
+                <input class="form-control" asp-for="Email" />
+                <span class="text-danger" asp-validation-for="Email"></span>
+            </div>
+            <div class="form-group mb-3">
+                <label asp-for="Password"></label>
+                <input class="form-control" asp-for="Password" />
+                <span class="text-danger" asp-validation-for="Password"></span>
+            </div>
+            <div class="form-group mb-3">
+                <div class="checkbox">
+                    <label asp-for="RememberMe">
+                        <input asp-for="RememberMe" />
+                        @Html.DisplayNameFor(m => m.RememberMe)
+                    </label>
+                </div>
+            </div>
+            <button class="btn btn-primary" type="submit">Login</button>
+        </form>
+    </div>
+</div>
