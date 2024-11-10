@@ -10,5 +10,6 @@ public class ApplicationUser : IdentityUser<int>
     [DataType(DataType.Date)]
     public DateTime Birthday { get; set; }
 
-    public CrownWallet? CrownWallet { get; set; }
+    public required CrownWallet CrownWallet { get; set; }
+    public required CrownInventory CrownInventory { get; set; }
 }
