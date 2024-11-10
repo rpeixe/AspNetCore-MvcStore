@@ -10,6 +10,7 @@ public class StoreEntry
     public ItemCategory Category { get; set; }
     public int MaxQuantity { get; set; }
 
+    public required ICollection<Discount> Discounts { get; set; }
     public required ICollection<ItemPurchase> Purchases { get; set; }
 
     public required ICollection<RelatedItem> RelatedItems { get; set; }
