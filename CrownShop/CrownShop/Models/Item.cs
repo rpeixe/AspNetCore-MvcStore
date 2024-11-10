@@ -1,3 +1,4 @@
+using System.ComponentModel.DataAnnotations.Schema;
 using CrownShop.Enums;
 
 namespace CrownShop.Models;
@@ -11,8 +12,12 @@ public abstract class Item
     public virtual ICollection<InventoryItem> Owners { get; set; } = [];
 
     public virtual ICollection<RelatedItem> RelatedStoreEntries { get; set; } = [];
-    public IEnumerable<RelatedItem> RequiredFor =>
+
+    [NotMapped]
+    public virtual IEnumerable<RelatedItem> RequiredFor =>
         RelatedStoreEntries.Where(r => r.Type == RelatedItemType.Prerequisite);
-    public IEnumerable<RelatedItem> IncludedInStoreEntries =>
+        
+    [NotMapped]
+    public virtual IEnumerable<RelatedItem> IncludedInStoreEntries =>
         RelatedStoreEntries.Where(r => r.Type == RelatedItemType.Included);
 }

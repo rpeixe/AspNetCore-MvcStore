@@ -1,3 +1,4 @@
+using System.ComponentModel.DataAnnotations.Schema;
 using CrownShop.Enums;
 
 namespace CrownShop.Models;
@@ -14,8 +15,12 @@ public class StoreEntry
     public virtual ICollection<ItemPurchase> Purchases { get; set; } = [];
 
     public virtual ICollection<RelatedItem> RelatedItems { get; set; } = [];
+
+    [NotMapped]
     public IEnumerable<RelatedItem> Prerequisites =>
         RelatedItems.Where(r => r.Type == RelatedItemType.Prerequisite);
+    
+    [NotMapped]
     public IEnumerable<RelatedItem> IncludedItems =>
         RelatedItems.Where(r => r.Type == RelatedItemType.Included);
 }
