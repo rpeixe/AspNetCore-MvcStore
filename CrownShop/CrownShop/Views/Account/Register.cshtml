@@ -1,5 +1,9 @@
 @model RegisterViewModel
 
+@section Scripts {
+    @{ await Html.RenderPartialAsync("_ValidationScriptsPartial.cshtml"); }
+}
+
 @{
     ViewData["Title"] = "User Registration";
 }
